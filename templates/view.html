@@ -45,15 +45,15 @@
         </div>
         {% endif %}
 
-        <!-- English PDF (from local storage) -->
+        <!-- English PDF (from Google Drive) -->
         {% if english_exists %}
         <div class="card">
             <div class="card-header">
                 <h3>अंग्रेज़ी पीडीएफ</h3>
-                <a href="{{ url_for('pdf_english', filename=filename) }}" class="download-btn" download>⬇ Download</a>
+                <a href="{{ english_download_url }}" class="download-btn" target="_blank">⬇ Download</a>
             </div>
             <div class="iframe-container">
-                <iframe src="{{ url_for('pdf_english', filename=filename) }}" title="English PDF"></iframe>
+                <iframe src="{{ english_preview_url }}" title="English PDF" allowfullscreen></iframe>
             </div>
         </div>
         {% else %}
@@ -69,10 +69,6 @@
 
     </div>
 </div>
-
-<footer class="footer">
-    <p>© 2026 Urban Technology. All rights reserved.</p>
-</footer>
 
 </body>
 </html>
